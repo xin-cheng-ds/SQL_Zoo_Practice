@@ -57,14 +57,12 @@ Show the percentage of students who A_STRONGLY_AGREE to question 22 for the subj
 
 Use the ROUND function to show the percentage without decimal places.
 ```
-SELECT  subject, ROUND(SUM(A_STRONGLY_AGREE*response/100)/SUM(response))
+SELECT  subject, ROUND(SUM(A_STRONGLY_AGREE*response)/SUM(response),0)
   FROM nss
  WHERE question='Q22'
       AND (subject='(8) Computer Science'
    OR subject = '(H) Creative Arts and Design')
    GROUP BY subject
 ```
-This question doesn't show correct answer, but I don't understand why. When I use 
-"SUM(A_STRONGLY_AGREE*response/100)"in SELECT, the answer is ![this](/img/divid.png), and when I use "SUM(response)" in SELECT, the answer is ![this](/img/divided_by.png)
-These two numbers divided is the correct answer 33 and 35. But I only got 0 as an answer. Really appreciate it if someone knows why. Thanks!
+
   
