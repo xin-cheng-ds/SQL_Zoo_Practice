@@ -1,3 +1,5 @@
+[Link](https://sqlzoo.net/wiki/NSS_Tutorial) to the web page
+
 1.
 The example shows the number who responded for:
 
@@ -12,3 +14,59 @@ SELECT A_STRONGLY_AGREE
    AND institution='Edinburgh Napier University'
    AND subject='(8) Computer Science'
 ```
+2.
+Show the institution and subject where the score is at least 100 for question 15.
+```
+SELECT institution, subject
+  FROM nss
+ WHERE question='Q15'
+   AND score >= 100
+```
+
+3.
+Show the institution and score where the score for '(8) Computer Science' is less than 50 for question 'Q15'
+```
+SELECT institution,score
+  FROM nss
+ WHERE question='Q15'
+   AND score < 50
+   AND subject='(8) Computer Science'
+```
+4.
+Show the subject and total number of students who responded to question 22 for each of the subjects '(8) Computer Science' and '(H) Creative Arts and Design'.
+```
+SELECT subject, SUM(response)
+  FROM nss
+ WHERE question='Q22'
+   GROUP BY subject
+   HAVING subject='(8) Computer Science'
+   OR subject = '(H) Creative Arts and Design'
+```
+5.
+Show the subject and total number of students who A_STRONGLY_AGREE to question 22 for each of the subjects '(8) Computer Science' and '(H) Creative Arts and Design'.
+```
+SELECT subject, SUM(A_STRONGLY_AGREE * response/100)
+  FROM nss
+ WHERE question='Q22'
+   GROUP BY subject
+   HAVING subject='(8) Computer Science'
+   OR subject = '(H) Creative Arts and Design'
+```
+6.
+Show the percentage of students who A_STRONGLY_AGREE to question 22 for the subject '(8) Computer Science' show the same figure for the subject '(H) Creative Arts and Design'.
+
+Use the ROUND function to show the percentage without decimal places.
+```
+SELECT  subject, SUM(A_STRONGLY_AGREE*response/100)/SUM(response)*100
+  FROM nss
+ WHERE question='Q22'
+      AND (subject='(8) Computer Science'
+   OR subject = '(H) Creative Arts and Design')
+   GROUP BY subject
+```
+This question doesn't show correct answer, but I don't understand why. When I use 
+```
+SUM(A_STRONGLY_AGREE*response/100)
+``` in SELECT, the answer is ![this](img/divid.png)
+
+  
