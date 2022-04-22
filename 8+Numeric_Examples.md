@@ -68,6 +68,6 @@ This question doesn't show correct answer, but I don't understand why. When I us
 ```
 SUM(A_STRONGLY_AGREE*response/100)
 ``` 
-in SELECT, the answer is ![this](/../img/divid)
+in SELECT, the answer is ![this](/img/divid)
 
   
