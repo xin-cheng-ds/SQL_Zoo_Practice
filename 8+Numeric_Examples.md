@@ -67,6 +67,6 @@ SELECT  subject, SUM(A_STRONGLY_AGREE*response/100)/SUM(response)*100
 This question doesn't show correct answer, but I don't understand why. When I use 
 ```
 SUM(A_STRONGLY_AGREE*response/100)
-``` in SELECT, the answer is ![this](img/divid.png)
+``` in SELECT, the answer is ![this](../img/divid.png)
 
   
