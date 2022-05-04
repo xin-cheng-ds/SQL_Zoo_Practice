@@ -1,6 +1,6 @@
 [Link](https://sqlzoo.net/wiki/Self_join) to the website
 
-There're some questions I couldn't get the correct answer, any help will be greatly appreciated if you see this. Thanks!
+I couldn't get the correct answer on question 7 and 10, any help will be greatly appreciated if you could help with this. Thanks!
 1.
 How many stops are in the database.
 ```
